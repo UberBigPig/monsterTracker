@@ -9,7 +9,7 @@ MacOS: Maybe using wine, not tested yet
 
 
 ### Installation instructions
-
+link to files:
 https://github.com/UberBigPig/monsterTracker/releases/tag/Newest
 
 [Windows]
