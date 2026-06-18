@@ -9,6 +9,8 @@ MacOS: Maybe using wine, not tested yet
 
 
 ### Installation instructions
+
+https://github.com/UberBigPig/monsterTracker/releases/tag/Newest
 [Windows]
 1. Look on the releases tab to download the .7z file of the latest version
 2. Extract files
