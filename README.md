@@ -1,5 +1,5 @@
 # monsterTracker
-tracker to see how many of each flavour of monster you have had
+Tracker to see how many of each flavour of monster you have had. 
 
 ### Platform support:
 Windows 10/11: Yes
