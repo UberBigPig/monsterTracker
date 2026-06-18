@@ -8,7 +8,7 @@ MacOS: Maybe using wine, not tested yet
 
 
 
-###Installation instructions
+### Installation instructions
 [Windows]
 1. Look on the releases tab to download the .7z file of the latest version
 2. Extract files
@@ -24,7 +24,12 @@ MacOS: Maybe using wine, not tested yet
 2. Extract files
 3. use a translation layer such as wine, or an app like bottles to run the .exe file (the recources and _internal folders must be in the same folder as the .exe file)
 
-###screenshots
+### screenshots
+
+
+
+
+
 <img width="500" height="738" alt="Screenshot 2026-06-18 223256" src="https://github.com/user-attachments/assets/d30db25a-ac87-49cc-ac74-ef1e51d62dd6" />
 
 ##TO DO LIST##
