@@ -35,6 +35,22 @@ https://github.com/UberBigPig/monsterTracker/releases/tag/Newest
 
 <img width="500" height="738" alt="Screenshot 2026-06-18 223256" src="https://github.com/user-attachments/assets/d30db25a-ac87-49cc-ac74-ef1e51d62dd6" />
 
+
+### Features
+-Counts how many of each flavour you have had
+-Lets you add new monsters that are missing/get released
+-(coming soon) gives you a leaderboard of the monsters you drink most often
+
+### How it works
+It uses tkinter and ttkbootstrap for the GUI, and uses pickle to save data in .PKL files. I chose tkinter and ttkboostrap because I am pretty familiar with them, and I used pickle because previously I have been using .csv files, and using pickle makes the saving and loading process a lot easier. 
+
+### Credits/Acknowledgements
+-I used a lot of ttkbootstrap: https://ttkbootstrap.readthedocs.io/en/latest/
+
+
+
+
+
 ##TO DO LIST##
 - add way for users to add new monster flavour into the app just in case any new flavours drop (completed in version 1.1 ✅)
 - release native mac and linux versions
