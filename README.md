@@ -36,10 +36,17 @@ https://github.com/UberBigPig/monsterTracker/releases/tag/Newest
 <img width="500" height="738" alt="Screenshot 2026-06-18 223256" src="https://github.com/user-attachments/assets/d30db25a-ac87-49cc-ac74-ef1e51d62dd6" />
 
 
+
+<img width="296" height="329" alt="Screenshot 2026-06-19 225627" src="https://github.com/user-attachments/assets/58506cd5-c86e-4a50-ae5d-6520a121f1eb" />
+
+
+
+
+
 ### Features
 -Counts how many of each flavour you have had
 -Lets you add new monsters that are missing/get released
--(coming soon) gives you a leaderboard of the monsters you drink most often
+-Gives you a leaderboard of the monsters you drink most often
 
 ### updating a previous version
 Unzip the .7z file and select only the .exe file and move it into the folder of the old instance. If it asks you if you want to overwrite/replace files, click yes.
@@ -55,4 +62,5 @@ It uses tkinter and ttkbootstrap for the GUI, and uses pickle to save data in .P
 ##TO DO LIST##
 - add way for users to add new monster flavour into the app just in case any new flavours drop (completed in version 1.1 ✅)
 - release native mac and linux versions
-- add monster leaderboard so users can see which monster they have most often
+- add monster leaderboard so users can see which monster they have most often (completed in version 1.2 ✅)
+- fix bugs caused by version 1.2
