@@ -41,13 +41,14 @@ https://github.com/UberBigPig/monsterTracker/releases/tag/Newest
 -Lets you add new monsters that are missing/get released
 -(coming soon) gives you a leaderboard of the monsters you drink most often
 
+### updating a previous version
+Unzip the .7z file and select only the .exe file and move it into the folder of the old instance. If it asks you if you want to overwrite/replace files, click yes.
+
 ### How it works
 It uses tkinter and ttkbootstrap for the GUI, and uses pickle to save data in .PKL files. I chose tkinter and ttkboostrap because I am pretty familiar with them, and I used pickle because previously I have been using .csv files, and using pickle makes the saving and loading process a lot easier. 
 
 ### Credits/Acknowledgements
 -I used a lot of ttkbootstrap: https://ttkbootstrap.readthedocs.io/en/latest/
-
-
 
 
 
