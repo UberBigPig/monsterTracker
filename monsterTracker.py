@@ -1,5 +1,4 @@
 import ttkbootstrap as ttk
-import csv
 import pickle
 import tkinter as tk
 
@@ -39,8 +38,10 @@ def counter(num):
     label = ttk.Label(infoFrame, text= f"you have consumed {monsterDictionary[type]} cans of {monsterTypes[num][0]}")
     label.pack(side="left", padx=5, pady=5, fill= "x")
     #makes button to add one to drink counter
+    createShowLeaderboardButton()
     addButton = ttk.Button(infoFrame, text="I just drank one", bootstyle= colour, command= lambda idx = num: drink(idx))
     addButton.pack(side="right")
+
 
 #function that is triggered by the "i just drank one" button
 #increases count of that flavour by one and saves it
@@ -59,6 +60,7 @@ def addFlavour(name, colour):
     monsterDictionary[name] = 0
     monsterTypes.append([name, colours[colour]])
     save()
+    removeFrames(infoFrame)
     options()
 
 
@@ -66,18 +68,34 @@ def addFlavour(name, colour):
 #open the save files
 with open(r"resources/monsterDictionary.pkl", "rb") as peepee:
     monsterDictionary = pickle.load(peepee)
-print(monsterDictionary)
+
 
 with open(r"resources/monsterTypes.pkl", "rb") as fart:
     monsterTypes = pickle.load(fart)
 
+#function to sort dictionary into array (with help from the monsterTypes array)
+def sort(dict, list):
+    #create list to be ordered ([flavour, amount])
+    unsortedArray = []
+    for i in range(0, len(dict)):
+        unsortedArray.append([list[i][0], dict[list[i][0]]])
+    #sort that list
+    for i in range(0, len(unsortedArray)-1):
+        for j in range(0, len(unsortedArray)-1-i):
+            if unsortedArray[j+1][1] > unsortedArray[j][1]:
+                unsortedArray[j], unsortedArray[j+1] = unsortedArray[j+1], unsortedArray[j]
+    return unsortedArray
 
+
+def createShowLeaderboardButton():
+    leaderboardButton = ttk.Button(infoFrame, text="Open leaderboard", command= showLeaderboard, bootstyle="primary-outline")
+    leaderboardButton.pack(side="right")
 
 
 #create the ui elements
 
 #create the window
-window = ttk.Window(themename="monster", title = "Monster Tracker", iconphoto= r"resources/monsterPNG.png", size=[500,800], position=[700, 150])
+window = ttk.Window(themename="monster", title = "Monster Tracker", iconphoto= r"resources/monsterPNG.png", size=[500, 825], position=[700, 150])
 
 #create the frame for the buttons to go in
 titleFrame = ttk.Labelframe(window, text="Monster Types", bootstyle="primary")
@@ -87,6 +105,29 @@ titleFrame.pack(side="top")
 #create the frame for the information to go in
 infoFrame = ttk.Frame(window)
 infoFrame.pack(side="top")
+
+#new window for leaderboard to go in
+def showLeaderboard():
+    leaderboardWindow = ttk.Window(themename="monster", title = "Leaderboard", iconphoto= r"resources/monsterPNG.png", size=[300,300], position=[800, 175])
+    leaderboardList = sort(monsterDictionary, monsterTypes)
+    #put leaderboardList into format that is readable by the listbox
+    insert = []
+    for i in range(0, len(leaderboardList)):
+        if i < 9:
+            insert.append(f"{i+1}.                  {leaderboardList[i][1]} cans: {leaderboardList[i][0]}")
+        elif i > 8:
+            insert.append(f"{i+1}.                {leaderboardList[i][1]} cans: {leaderboardList[i][0]}")
+
+
+
+
+    listVariable = tk.Variable(value=insert)
+    leaderboard = tk.Listbox(leaderboardWindow, listvariable= listVariable, height=6)
+    for j in range (0, len(insert)):
+        leaderboard.insert(j, insert[j])
+    leaderboard.pack(padx=10, pady=10, expand= True, fill="both")
+
+    leaderboardWindow.mainloop()
 
 
 #function that contains titleFrame and all widgets inside of it, calling it will reload the widget
@@ -126,8 +167,15 @@ def options():
     #button to add monster
     monsterInputButton = ttk.Button(titleFrame, text="Add Flavour", command= temp)
     monsterInputButton.pack(side="left", padx= 25, pady=10)
+    createShowLeaderboardButton()
+
 
 
 options()
+
+
+
+
+
 
 window.mainloop()
