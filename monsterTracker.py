@@ -176,7 +176,7 @@ options()
 
 # I am going to rewrite this in c so that it is more efficient
 # floppalopagus
-
+# glop glop glop
 
 
 window.mainloop()
